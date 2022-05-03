@@ -1,0 +1,34 @@
+<div class="col-md-5 offset-md-3">
+    <h3>Create Profile</h3>
+    <form (ngSubmit)="onSubmit()">
+    
+        <div class="form-group">
+            <label>name</label>
+            <input type="text" class="form-control" id="name" 
+            [(ngModel)]="profile.name" name="name">
+        </div>
+        <div class="form-group">
+            <label>PhoneNo</label>
+            <input type="text" class="form-control" id="PhoneNo" 
+            [(ngModel)]="profile.ph_number" name="PhoneNo">
+        </div>
+        <div class="form-group">
+            <label>emailid</label>
+            <input type="text" class="form-control" id="emailid" 
+            [(ngModel)]="profile.email_id" name="emailid">
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" id="Address" 
+            [(ngModel)]="profile.address" name="Address">
+        </div>
+        <div class="form-group">
+            <label>monthlyemi</label>
+            <input type="text" class="form-control" id="monthlyemi" 
+            [(ngModel)]="profile.monthlyemi" name="monthlyemi">
+        </div>
+    
+        <button class ="btn btn-success" type="submit">Submit</button>
+    
+    </form>
+    </div>

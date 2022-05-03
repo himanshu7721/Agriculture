@@ -1,0 +1,45 @@
+<div class="container">
+    <mat-toolbar color="primary">
+        <span class="fill-remaining-space"></span>
+        <span>Login</span>
+
+        <span class="fill-remaining-space"></span>
+    </mat-toolbar>
+
+<mat-card>
+    <mat-grid-list cols="1" rowHeight="300px">
+        <mat-grid-tile>
+
+            <div class="controls">
+
+                <form (ngSubmit)="formSubmit()">
+                    <!-- email field -->
+                    <mat-form-field>
+                        <input 
+                        [(ngModel)]="loginData.email"
+                        name="email" matInput placeholder="User Email" id="email"
+                             required>
+                            <mat-hint align="start">Email should be registered with portal</mat-hint>
+            
+                    </mat-form-field>
+                    <!-- Password field -->
+                    <mat-form-field>
+                        <input type="password" 
+                        [(ngModel)]="loginData.password"
+                        name="passsword" matInput
+                            placeholder="Enter Password" id="password" required>
+
+                        
+
+                    </mat-form-field>
+                    <div class="buttonClass">
+                        <button type="submit" mat-raised-button color="primary" id="loginButton">Login</button>
+                    </div>
+                    <p style="text-align: center;">New user/admin? <a [routerLink]="'/signup'" id="signupLink">Sign Up</a></p>
+                </form>
+            </div>
+            
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
+</div>

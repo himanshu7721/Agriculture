@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    
+    <span>Agriculture Loan</span>
+    <span class="example-spacer"></span>
+    <a
+    *ngIf="!loginservice.isloggedIn()"
+    [routerLink]="'/signup'"
+    mat-icon-button 
+    class="example-icon favorite-icon mr20" 
+    aria-label="Example icon-button with heart icon"  
+    >
+      Register
+    </a>
+    <a
+    (click)="logout()" 
+    *ngIf="loginservice.isloggedIn()"
+     mat-icon-button 
+     class="example-icon favorite-icon mr20"
+      aria-label="Example icon-button with heart icon">
+        LogOut
+    </a>
+    
+  </mat-toolbar>

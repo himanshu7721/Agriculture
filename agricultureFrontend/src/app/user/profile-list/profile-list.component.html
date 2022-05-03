@@ -1,0 +1,32 @@
+<!-- <p>profile-list works!</p> -->
+<h2 class="text-center">Customer Details</h2>
+<table class ="table table-striped">
+    <thead>
+        <link rel="stylesheet" type="text/css" href="profile-list.component.css">
+        <tr>
+            <th>name</th>
+            <th>PhoneNo</th>
+            <th>emailid</th>
+            <th>Address</th>
+            <th>loanid</th>
+            <th>monthlyemi</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor = "let profile of profiles">
+            <td>{{profile.name}}</td>
+            <td>{{profile.mobile_no}}</td>
+            <td>{{profile.emailid}}</td>
+            <td>{{profile.address}}</td>
+            <td>{{profile.loan_id}}</td>
+            <td>{{profile.monthlyemi}}</td>
+            <td>
+                <button (click) ="updateprofile(profile.loanid)" class="btn btn-info"> update</button>
+                <button (click) ="deleteprofile(profile.loanid)" class="btn btn-info">Delete</button>
+            </td>
+
+            </tr>
+        </tbody>
+    
+</table>

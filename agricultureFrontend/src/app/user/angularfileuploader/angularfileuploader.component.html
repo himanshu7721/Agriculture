@@ -1,0 +1,64 @@
+<!-- <p>angularfileuploader works!</p> -->
+
+<!-- <input type="file" class="file-upload" onchange="console.log(event.target.files)"> -->
+<div class="offset-md-2">
+  <form>
+    <div class="form-group">
+      <label>Upload Documents(Mandatory *)</label>
+      <br />
+      <select id="selectDocumentType" name="documents">
+        <option value="">Please pick a type</option>
+        <option value="adhaar card">Adhaar Card</option>
+        <option value="pan card">Pan Card</option>
+        <option value="voter id card">Voter Id Card</option>
+        <option value="passport">Passport</option>
+      </select>
+    </div>
+    <br />
+    <div class="form-group">
+      <label>Images or Documents(upload below 2mb)</label>
+
+      <br />
+      <input
+        type="file"
+        id="chooseFile"
+        name="imageFile"
+        (change)="onSelectFile($event)"
+        style="height: 100%"
+      />
+    </div>
+
+    <button
+      class="btn btn-primary my-4"
+      id="uploadDocumentsButton"
+      (click)="onUpload()"
+    >
+      Upload Documents
+    </button>
+
+    <button
+      class="btn btn-success offset-md-6"
+      id="applyLoanButton"
+      (click)="onSubmit()"
+    >
+      Apply for loan
+    </button>
+
+    <div class="container offset-md-4">
+      <div class="btn-group" role="group" aria-label="Third group">
+        <button type="button" class="btn btn-secondary" (click)="onClick()">
+          1
+        </button>
+
+        <button class="btn btn-secondary" type="submit">2</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+  <!-- <div class="container row">
+    <class="col-md-12">
+      <p id="demo"></p>
+      <p>Your Loan id is : {{ customers[customers.length - 1].loan_id }}</p>
+  </div> -->
+<!-- </div> -->
