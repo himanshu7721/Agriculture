@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../auth/services/login.service';
 
 @Component({
@@ -7,8 +8,8 @@ import { LoginService } from '../auth/services/login.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(public loginservice: LoginService) { }
+value:any
+  constructor(public loginservice: LoginService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -16,8 +17,17 @@ export class NavbarComponent implements OnInit {
 
   public logout()
   {
+    this.value=window.confirm("Do you want to LogOut ?");
+    if(this.value==true)
+    {
+      
     this.loginservice.logout();
     window.location.reload();
+    }
+    else{
+      this.router.navigate(['admin/home']);
+    }
+    
   }
 
 }
