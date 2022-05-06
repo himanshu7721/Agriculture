@@ -1,0 +1,35 @@
+<!-- <p>profile-list works!</p> -->
+<app-user></app-user>
+<h2 class="text-center">Customer Details</h2>
+<table class ="table table-striped">
+    <thead>
+        <link rel="stylesheet" type="text/css" href="profile-list.component.css">
+        <tr>
+            <th>name</th>
+            <th>PhoneNo</th>
+            <th>emailid</th>
+            <th>Address</th>
+            <th>loanid</th>
+            <th>monthlyemi</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor = "let profile of profiles">
+            <td *ngIf="profile.emailid==currentuseremail.emailId">{{profile.name}}</td>
+            <td *ngIf="profile.emailid==currentuseremail.emailId">{{profile.mobile_no}}</td>
+            <td  *ngIf="profile.emailid==currentuseremail.emailId">{{profile.emailid}}</td>
+            <td  *ngIf="profile.emailid==currentuseremail.emailId">{{profile.address}}</td>
+            <td  *ngIf="profile.emailid==currentuseremail.emailId">{{profile.loan_id}}</td>
+            <td  *ngIf="profile.emailid==currentuseremail.emailId">{{profile.emi}}</td>
+            <td  *ngIf="profile.emailid==currentuseremail.emailId">
+                <button  *ngIf="profile.emailid==currentuseremail.emailId" (click) ="updateprofile(profile.loanid)" class="btn btn-info"> update</button>
+                
+            </td>
+
+            </tr>
+            
+        </tbody>
+        
+</table>
+

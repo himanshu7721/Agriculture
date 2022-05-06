@@ -1,0 +1,41 @@
+<app-adminhomepage></app-adminhomepage>
+<br>
+<div class="container" >
+    <div class="card-body pb-3 pt-3" style="text-align: center;">
+        <form class="form-inline">
+            <div class="form-group">
+                 <input style="width: 13cm;" [(ngModel)]="searchUser" name="user" type="search" placeholder="Enter loan ID to search">
+                 <button type="button" style="margin-left: 1cm;" (click)="searchuser()" class="btn btn-dark">Search</button>
+            </div>
+        </form>
+    </div>
+<br>
+    <div *ngFor="let x of admindata">
+        <div *ngIf="x.loan_id==searchUser">
+            <div id="adminLoan Grid1" class="grid-container pb-2 pt-2">
+                <div class="grid-item">Applicant name : {{x.name}}</div>
+                <div class="grid-item">Applicant Phone number : {{x.mobile_no}}</div>
+                <div class="grid-item">Applicant PAN : {{x.pan_no}}</div>
+                <div class="grid-item">Applicant Address : {{x.address}}</div>
+                <div class="grid-item">Applicant Loan Id : {{x.loan_id}}</div>
+                <div class="grid-item">Applicant Salary : {{x.salary}}</div>
+                <div class="grid-item">Applicant Email : {{x.emailid}}</div>
+                <div class="grid-item">Applicant Aadhar : {{x.adhaar_no}}</div>
+                <div class="grid-item" *ngIf="x.status=='Approved'" style="background-color: green;width: 120px;text-align: center;">
+                    Approved
+                </div> 
+                <div class="grid-item" *ngIf="x.status=='Rejected'" style="background-color: rgb(223, 16, 16);width: 120px;text-align: center;">
+                    Rejected
+                </div> 
+            </div><br><br><br>
+                 <button style="width: 100px; margin-left: 7cm;padding: 10px;" type="button" (click)="deleteLoan(x.loan_id)" class="btn btn-danger btn-sm ">Delete Loan</button>
+                 <button style="width: 100px; margin-left: 8cm;padding: 10px" type="button" (click)="editLoan(x.loan_id)" class="btn btn-primary btn-sm">Edit Loan</button>
+                <div *ngIf="x.status=='Approved'"><br><br>
+                    <div *ngIf="x.emi<=0">
+                         <button style="width:100px;margin-left: 12cm; " type="button" (click)="generateEmi(x.loan_id)" class="btn btn-success btn-sm">Generate Schedule</button>
+                    </div>
+                    <button style="width:100px;margin-left: 7cm;" type="button" (click)="editRepaymentLoan(x.loan_id)" class="btn btn-primary btn-sm">Edit Repayment Schedule</button>
+                    <button style="width: 100px; margin-left: 8cm;" type="button" (click)="deleteRepaymentSchedule(x.loan_id)" class="btn btn-danger btn-sm">Delete Repayment Schedule</button>
+                </div>
+        </div>
+</div>

@@ -1,0 +1,33 @@
+#headerbar{
+    background-color: rgba(34, 192, 231, 0.87);
+    color: #ffffff;
+    padding: 20px;
+}
+#title
+{
+    font-size: 30px;
+}
+#adminAppliedLoans,#AdminAppliedDetails{
+margin-left: 100px;
+text-decoration: none;
+font-style: normal;
+font-size: 20px;
+color: #ffffff;
+}
+#logout{
+margin-left: 350px;
+text-decoration: none;
+color: #ffffff;
+font-size: 20px;
+font-style: normal;
+}
+#AdminAppliedDetails:hover{
+    font-size: 30px;
+}
+#adminAppliedLoans:hover
+{
+     font-size: 30px;
+}
+#logout:hover{
+    font-size: 30px;
+}

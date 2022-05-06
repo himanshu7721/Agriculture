@@ -1,0 +1,36 @@
+<app-user></app-user>
+<div class="container" >
+    <div class="card-body pb-3 pt-3" style="text-align: center;"><br>
+        <h1 style="text-align: center;font-size: xx-large;"><b>Track Your Loan Application</b></h1><br>
+        <form class="form-inline">
+            <div class="form-group">
+                 <input id="enterLoanId" style="width: 15cm;height:1cm;" [(ngModel)]="user" name="user" type="search" placeholder="Enter loan ID to search"><br><br>
+                 <button id="trackButton" type="button" style="margin-left: 1cm;" (click)="trackLoan()"  class="btn btn-danger btn-lg">Track</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<div *ngFor="let x of data">
+    <div *ngIf="x.loan_id==user">
+        <div id="adminLoan Grid1" class="grid-container pb-2 pt-2">
+            <div class="grid-item">Applicant name : {{x.name}}</div>
+            <div class="grid-item">Applicant Phone number : {{x.mobile_no}}</div>
+            <div class="grid-item">Applicant PAN : {{x.pan_no}}</div>
+            <div class="grid-item">Applicant Address : {{x.address}}</div>
+            <div class="grid-item">Applicant Loan Id : {{x.loan_id}}</div>
+            <div class="grid-item">Applicant Salary : {{x.salary}}</div>
+            <div class="grid-item">Applicant Email : {{x.emailid}}</div>
+            <div class="grid-item">Applicant Aadhar : {{x.adhaar_no}}</div>
+            <div class="grid-item" *ngIf="x.status=='Approved'" style="background-color: green;width: 120px;text-align: center;">
+                Approved
+            </div> 
+            <div class="grid-item" *ngIf="x.status=='Rejected'" style="background-color: rgb(223, 16, 16);width: 120px;text-align: center;">
+                Rejected
+            </div> 
+            <div class="grid-item" *ngIf="x.status==null" style="background-color: rgb(171, 202, 59);width: 120px;text-align: center;">
+                In-Progress
+            </div> 
+        </div>
+    </div>
+</div>

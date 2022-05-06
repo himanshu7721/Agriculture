@@ -1,0 +1,36 @@
+<div class="container pd-2 pt-2">
+    <h1 style="color: rgb(74, 103, 233);text-align:center">Welcome to Updating of Loan</h1>
+    <form >
+        <div class="form-group">
+            <label>Applicant_Name</label><br>
+            <input type="text" [(ngModel)]="admindata.name" name="Applicant_Name" class="form-control" >
+        </div><br>
+        <div class="form-group">
+            <label>Applicant_Aadhar</label><br>
+            <input type="text" [(ngModel)]="admindata.adhaar_no" name="applicantAadhar" class="form-control" >
+        </div><br>
+        <div class="form-group">
+            <label>Applicant_Address</label><br>
+            <input type="text" [(ngModel)]="admindata.address" name="applicantAddress" class="form-control" >
+        </div><br>
+        <div class="form-group">
+            <label>Applicant_Email</label><br>
+            <input type="text" [(ngModel)]="admindata.emailid" name="applicantEmail" class="form-control" >
+        </div><br>
+        <div class="form-group">
+            <label>Applicant_Pan</label><br>
+            <input type="text" [(ngModel)]="admindata.pan_no" name="applicantPan" class="form-control" >
+        </div><br>
+        <div class="form-group">
+            <label>Applicant_Phone</label><br>
+            <input type="text" [(ngModel)]="admindata.mobile_no" name="applicantPhone" class="form-control" >
+        </div><br>
+        <div class="form-group">
+            <label>Applicant_Salary</label><br>
+            <input type="text" [(ngModel)]="admindata.salary" name="applicantSalary" class="form-control" >
+        </div><br>
+        <br>
+        <button style="width: 3cm;" (click)="onSubmit(admindata)" type="submit" class="btn btn-primary btn-sm">Update</button>
+        <button style="margin-left: 10cm;width: 3cm;" (click)="cancel()"  type="button" class="btn btn-danger btn-sm">Cancel</button>
+    </form><br><br>
+</div>

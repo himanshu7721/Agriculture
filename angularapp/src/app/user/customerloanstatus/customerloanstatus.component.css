@@ -1,0 +1,11 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: rgb(136, 194, 233);
+    width: 1200px;
+    margin-left: 40px;
+}
+.grid-item
+{
+    padding: 5px;
+}
